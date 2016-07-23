@@ -14,7 +14,7 @@ window.onload = function() {
     function Create(array) {
         for (var key in array) {
             var value = array[key];
-            var i = document.getElementById(value);
+            var i = document.getElementById(key);
             if (!i) {
                 var ele = document.createElement('li');
                 ele.id = key;
@@ -32,6 +32,7 @@ window.onload = function() {
 
     socket.on('create', Create);
     socket.on('delete', Delete);
+    socket.on('fetch', Create);
 
 
 }

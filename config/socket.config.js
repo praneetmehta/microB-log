@@ -10,8 +10,8 @@ module.exports.listen = function(server) {
                 console.log(name + ' joined');
                 user[socket.id] = name;
                 console.log(user);
-                socket.broadcast
-.emit('create', user);
+                socket.emit('fetch', user);
+                socket.broadcast.emit('create', user);
             }
         });
         socket.on('disconnect', function() {
