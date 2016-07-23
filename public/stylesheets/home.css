@@ -1,0 +1,76 @@
+#userinfo {
+    display: block;
+    position: relative;
+}
+
+#infoform {
+    display: table;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background: #ddd;
+    background: linear-gradient(#fff, #eee);
+    box-shadow: 0px 6px 3px -3px #ccc;
+}
+
+td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 10px;
+    width: 50%;
+}
+
+input {
+    width: 60%;
+    border: 2px solid #ddd;
+    transition: all 0.5s;
+    height: 30px;
+    background-color: inherit;
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #444;
+}
+
+.toggle {
+    border-radius: 100%;
+    height: 80%;
+    width: 60%;
+    background: #eee;
+    border: 1px solid #ccc;
+    transition: all 0.2s;
+    box-shadow: inset -2px -2px 5px 2px white;
+}
+
+.toggle:hover {
+    background: #ccc;
+    box-shadow: inset 2px 2px 5px white;
+}
+
+.btnHolder {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.glyphicon-pencil {
+    color: gray;
+    position: relative;
+    align: middle;
+    left: -6px;
+    top: -2px;
+    transform: scale(0.8, 0.8);
+}
+
+.toggle:focus {
+    outline: none;
+}
+
+.toggle:active {
+    outline: none !important;
+    box-shadow: inset 2px 2px 5px black;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Home</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/home.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="/socket.io/socket.io.js" ></script>
+	</head>
+	<body>
+		<% include ./navbar.ejs%>
+		<% include ./availableUsers.ejs %>
+		<div class="container">
+			<div id="userName">
+				<h1>Howdy <%= username %></h1>
+				<br>
+			</div>
+			<div id="userpic">
+			
+			</div>
+			<div id="userinfo" class="container">
+				<form class="form-horizontal" role="form" if="infoform" method="POST" action="update">
+					<table style="width:100%" id="tb1">
+						<tr>
+							<td><label for="username">Username</label></td>
+							<td><input type="text" name="username" id="username" value = <%= username %> readonly></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><label for="firstname">First Name</label></td>
+							<td><input type="text" name="firstname" id="firstname" value = <%= user.firstname %> readonly></td>
+							<td class="btnHolder"><button id="togglefirstname" class="toggle btn" type="button"><span class="glyphicon glyphicon-pencil"></span></button></td>
+						</tr>
+						<tr>
+							<td><label for="lastname">Last Name</label></td>
+							<td><input type="text" name="lastname" id="lastname" value = <%= user.lastname %> readonly></td>
+							<td class="btnHolder"><button id="togglelastname" class="toggle btn" type="button"><span class="glyphicon glyphicon-pencil"></span></button></td>
+						</tr>
+						<tr>
+							<td><label for="email">Email</label></td>
+							<td><input type="text" name="email" id="email" value = <%= user.email %> readonly></td>
+							<td class="btnHolder"><button id="toggleemail" class="toggle btn" type="button"><span class="glyphicon glyphicon-pencil"></span></button></td>
+						</tr>
+						<tr>
+							<td><label for="hostel">Hostel</label></td>
+							<td><input type="text" name="hostel" id="hostel" value = <%= user.hostel %> readonly></td>
+							<td class="btnHolder"><button id="togglehostel" class="toggle btn" type="button"><span class="glyphicon glyphicon-pencil"></span></button></td>
+						</tr>
+						<tr>
+							<td><label for="room">Room No.</label></td>
+							<td><input type="text" name="room" id="room" value = <%= user.room %> readonly></td>
+							<td class="btnHolder"><button id="toggleroom" class="toggle btn" type="button"><span class="glyphicon glyphicon-pencil"></span></button></td>
+						</tr>
+						<tr>
+							<td><label for="contact">Contact</label></td>
+							<td><input type="text" name="contact" id="contact" value = <%= user.contact %> readonly></td>
+							<td class="btnHolder"><button id="togglecontact" class="toggle btn" type="button"><span class="glyphicon glyphicon-pencil"></span></button></td>
+						</tr>
+						<tr>
+							<td colspan="4"><button type="submit" class="btn btn-info" style="text-align: center">Update</button></td>
+						</tr>	
+					</table>
+					
+					
+				</form>
+			</div>
+		</div>
+		<script type="text/javascript" src="/javascripts/hometoggle.js" ></script>
+		<script type="text/javascript" src="/javascripts/socket.js"></script>
+	</body>
+</html>
