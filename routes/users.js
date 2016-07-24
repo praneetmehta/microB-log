@@ -55,9 +55,9 @@ router.get('/login', function(req, res) {
     res.render('login');
 });
 
-router.get('/availableUsers', function(req, res) {
-    res.render('availableUsers');
-})
+router.get('/chat', function(req, res) {
+    res.render('chat', { username: req.session.user });
+});
 
 router.post('/signup', function(req, res) {
     var name = req.body.name;

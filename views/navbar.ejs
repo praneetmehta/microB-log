@@ -1,18 +1,24 @@
-<nav class="navbar navbar-default navbar-inverse" style="border-radius: 0px">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<a class="navbar brand" href="#"></a>
-		</div>
-		<ul class="nav navbar-nav">
-			<li><a href="/users/home">Home</a></li>
-			<li><a href="#">Window</a></li>
-			<li><a href="/users/availableUsers">Users</a></li>
-			<li><a href="#">ChatBox</a></li>
-		</ul>
-		<ul class="nav navbar-nav navbar-right">
-			<li><a href="/users/login">Login</a></li>
-			<li><a href="/users/signup">Signup</a></li>
-			<li><a href="/users/logout">Logout</a></li>
-		</ul>
-	</div>
-</nav>
+ <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/users/home">Home</a></li>
+                    <li><a href="/users/chat">Chatbox</a></li>
+                    <li><a href="/users/window">Window</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                <li><a href="/users/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                    <li><a href="/users/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="/users/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>

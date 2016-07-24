@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Home</title>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   	 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>	
+		<link rel="stylesheet" type="text/css" href="/stylesheets/chat.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/sidebarcss.css">
+		<script src="/socket.io/socket.io.js" ></script>
+	</head>
+	<body>
+		<% include ./sidebar.ejs%>
+		<div id="main">
+			<% include ./navbar.ejs%>
+			 <span style="font-size:30px;cursor:pointer" onclick="opennav()">☰ online</span>
+		<h4 style="margin-left:35px">Joined as <span id="sessionUserId"><%= username%></span></h4>
+		<ul id="message"></ul>
+		<audio id="pop">
+			<source src="/pop.mp3" type="audio/mpeg">
+			audio not supported
+		</audio>
+		<div id="send">
+			<form id="form" role="form">
+				<table>
+				<tr>
+					<td width="99%"><input type="text" id="messageText" autocomplete="off"></td>
+					<td align="right" width="1%"><button type="submit" id="sendMessage">Send</button></td>
+				</tr>
+			</table>
+			</form>
+		</div>
+		</div>
+		<script type="text/javascript" src="/javascripts/socketchat.js"></script>
+		<script type="text/javascript" src="/javascripts/chatboxanimate.js" ></script>
+
+	</body>
+</html>

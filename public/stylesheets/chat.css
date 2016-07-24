@@ -1,0 +1,59 @@
+form {
+    position: fixed;
+    bottom: 0;
+    padding: 20px;
+    padding-top: 10px;
+    background-color: white;
+}
+
+input {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    border: 1px solid gray;
+}
+
+#sendMessage {
+    width: 100%;
+}
+
+.self {
+    padding: 15px;
+    border: 1px solid black;
+    text-align: right;
+    position: relative;
+    right: 0;
+    margin: 10px;
+    background-color: rgba(0, 0, 255, 0.1);
+    border-radius: 10px;
+    width: 75%;
+    margin-left: 20%;
+    min-width: 100px;
+    overflow: hidden;
+}
+
+.other {
+    padding: 15px;
+    border: 1px solid black;
+    text-align: left;
+    position: relative;
+    left: 0;
+    margin: 10px;
+    border-radius: 10px;
+    width: 75%;
+    min-width: 100px;
+    overflow: hidden;
+}
+
+li {
+    list-style-type: none;
+}
+
+#message {
+    margin-bottom: 80px;
+}
