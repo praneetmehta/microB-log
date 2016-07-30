@@ -3,7 +3,7 @@ var sio = require('socket.io');
 module.exports.listen = function(server) {
     var user = {};
     var chatUser = {};
-    var messages = {};
+    var messageCache = [];
     var io = sio.listen(server);
     io.sockets.on('connection', function(socket) {
 
@@ -28,7 +28,9 @@ module.exports.listen = function(server) {
         socket.on('chatJoined', function(name) {
             console.log(name + ' joined the chat');
             chatUser[socket.id] = name;
+            console.log(messageCache);
             socket.emit('info', chatUser);
+            socket.emit('fetchCachedMsg', messageCache);
             socket.broadcast.emit('joinAnnouncement', name, socket.id);
         });
         socket.on('disconnect', function() {
@@ -38,7 +40,13 @@ module.exports.listen = function(server) {
         });
         socket.on('message', function(message) {
             var name = chatUser[socket.id];
-
+            if (messageCache.length < 20) {
+                messageCache.push(name + ' ' + message);
+                console.log(messageCache);
+            } else {
+                messageCache.shift();
+                messageCache.push(name + ' ' + message);
+            }
             socket.broadcast.emit('write', name, message);
         });
     });

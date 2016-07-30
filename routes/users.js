@@ -34,7 +34,7 @@ router.get('/home', function(req, res, next) {
         res.end([
             '<p>You are not authorized</p>',
             '<p>Either <a href="/users/login">Log in</a> or <a href="/users/signup">SignUp</a></p>'
-        ].join(''))
+        ].join(''));
     }
 });
 
@@ -56,7 +56,19 @@ router.get('/login', function(req, res) {
 });
 
 router.get('/chat', function(req, res) {
-    res.render('chat', { username: req.session.user });
+    if (req.session.user) {
+        res.render('chat', { username: req.session.user });
+    } else {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end([
+            '<p>You are not authorized</p>',
+            '<p>Either <a href="/users/login">Log in</a> or <a href="/users/signup">SignUp</a></p>'
+        ].join(''));
+    }
+});
+
+router.get('/window', function(req, res) {
+    res.render('window');
 });
 
 router.post('/signup', function(req, res) {
